@@ -83,7 +83,7 @@ class TasksDBWorker {
     return taskfromMap(task.first);
   }
 
-  Future<List> getAllTasks() async {
+  Future<List> getAll() async {
     Database db = await database;
     var tasks = await db.query('tasks');
     var list = tasks.isNotEmpty 

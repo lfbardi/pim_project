@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'appointments/Appointments.dart';
+import 'tasks/Tasks.dart';
 import 'notes/Notes.dart';
 import 'utils.dart' as utils;
 
@@ -46,10 +48,10 @@ class PIMProject extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              // Appointments(),
-              // Contacts(),
+              Appointments(),
+              Container(),
               Notes(),
-              // Tasks()
+              Tasks()
             ]
           ),
         )

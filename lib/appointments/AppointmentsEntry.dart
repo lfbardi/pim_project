@@ -87,10 +87,10 @@ class AppointmentsEntry extends StatelessWidget {
                         String chosenDate = await utils.selectDate(
                           context: context,
                           model: appointmentsModel,
-                          dateString: appointmentsModel.entityBeingEdited.apptDate,
+                          dateString: appointmentsModel.entityBeingEdited.appDate,
                         );
                         if (chosenDate != null) {
-                          appointmentsModel.entityBeingEdited.apptDate = chosenDate;
+                          appointmentsModel.entityBeingEdited.appDate = chosenDate;
                         }
                       }
                     )
@@ -117,15 +117,15 @@ class AppointmentsEntry extends StatelessWidget {
   Future _selectTime(BuildContext context) async {
     TimeOfDay initialTime = TimeOfDay.now();
 
-    if (appointmentsModel.entityBeingEdited.apptTime != null) {
-      List timeParts = appointmentsModel.entityBeingEdited.apptTime.split(",");
+    if (appointmentsModel.entityBeingEdited.appTime != null) {
+      List timeParts = appointmentsModel.entityBeingEdited.appTime.split(",");
       initialTime = TimeOfDay(hour : int.parse(timeParts[0]), minute : int.parse(timeParts[1]));
     }
 
     TimeOfDay picked = await showTimePicker(context : context, initialTime : initialTime);
 
     if (picked != null) {
-      appointmentsModel.entityBeingEdited.apptTime = "${picked.hour},${picked.minute}";
+      appointmentsModel.entityBeingEdited.appTime = "${picked.hour},${picked.minute}";
       appointmentsModel.setAppTime(picked.format(context));
     }
   }

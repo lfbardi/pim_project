@@ -101,8 +101,6 @@ class AppointmentsList extends StatelessWidget {
                               itemBuilder: (BuildContext context, int index) {
                                 Appointment appointment = appointmentsModel.entityList[index];
                                 
-                                if(appointment.appDate != '${date.year},${date.month},${date.day}') return SizedBox( height: 0 );
-
                                 String appTime = '';
                                 if(appointment.appTime != null) {
                                   List timeParts = appointment.appTime.split(',');

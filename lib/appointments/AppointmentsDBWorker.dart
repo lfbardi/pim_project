@@ -80,7 +80,7 @@ class AppointmentsDBWorker {
     return appointmentFromMap(appointments.first);
   }
 
-  Future<List> getAllAppointments() async {
+  Future<List> getAll() async {
     Database db = await database;
     var appointments = await db.query('appointments');
     var list = appointments.isNotEmpty 

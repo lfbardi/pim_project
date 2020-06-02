@@ -83,7 +83,7 @@ class NotesDBWorker {
     return notefromMap(note.first);
   }
 
-  Future<List> getAllNotes() async {
+  Future<List> getAll() async {
     Database db = await database;
     var notes = await db.query('notes');
     var list = notes.isNotEmpty 
