@@ -49,7 +49,7 @@ class TasksDBWorker {
 
   Map<String, dynamic> taskToMap(Task task) {
     Map<String, dynamic> map = Map<String, dynamic>();
-    map['note'] = task.id;
+    map['id'] = task.id;
     map['description'] = task.description;
     map['dueDate'] = task.dueDate;
     map['completed'] = task.completed;
