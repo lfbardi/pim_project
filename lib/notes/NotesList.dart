@@ -74,20 +74,20 @@ class NotesList extends StatelessWidget {
     return showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) {
+      builder: (BuildContext alertContext) {
         return AlertDialog(
           title: Text('Delete Note'),
           content: Text('Are you sure you want to delete ${note.title}?'),
           actions: <Widget>[
             FlatButton(
               child: Text('Cancel'),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => Navigator.of(alertContext).pop(),
             ),
             FlatButton(
               child: Text('Delete'),
               onPressed: () async {
                 await NotesDBWorker.db.deleteNote(note.id);
-                Navigator.of(context).pop();
+                Navigator.of(alertContext).pop();
                 Scaffold.of(context).showSnackBar(
                   SnackBar(
                     backgroundColor: Colors.red,

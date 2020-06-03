@@ -77,14 +77,6 @@ class TasksEntry extends StatelessWidget {
                       },
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.color_lens),
-                    title: Row(
-                      children: <Widget>[
-                        
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
